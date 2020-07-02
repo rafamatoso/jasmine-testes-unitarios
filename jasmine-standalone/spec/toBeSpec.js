@@ -1,3 +1,5 @@
+// toBe compara todo o objeto
+
 describe("Comparador toBe", () => {
   it("Deve validar o uso do toBe", () => {
     expect(true).toBe(true);
