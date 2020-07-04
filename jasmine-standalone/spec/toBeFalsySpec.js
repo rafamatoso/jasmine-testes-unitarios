@@ -1,4 +1,4 @@
-describe("teste do toBeFalsy", () => {
+describe("Teste do toBeFalsy", () => {
   it("Deve demonstrar o uso do toBeFalsy", () => {
     expect(null).toBeFalsy();
     expect(undefined).toBeFalsy();

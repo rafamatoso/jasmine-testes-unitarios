@@ -9,7 +9,7 @@ describe("Teste do beforeEach", () => {
     expect(cont).toEqual(1);
   });
 
-  it("deve icrementar o contador para 2", () => {
+  it("deve incrementar o contador para 2", () => {
     expect(cont).toEqual(2);
   });
 });
