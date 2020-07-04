@@ -10,9 +10,24 @@ describe("Testes do objeto Spy", () => {
     spyOn(calculadora, "somar");
   });
 
-  // caso o objeto spy não seja instanciado, o expect testaria
-  // a instância do objeto definido no início da suite
-  it("deve possuir o método somar como não definido", () => {
+  /* caso o objeto spy não seja instanciado, o expect testaria
+  a instância do objeto definido no início da suite */
+  xit("deve possuir o método somar como não definido", () => {
     expect(calculadora.somar(1, 1)).toBeUndefined();
+  });
+
+  it("método somar não foi chamado", () => {
+    expect(calculadora.somar).not.toHaveBeenCalled();
+  });
+
+  it("deve chamar o método somar ao menos uma vez", () => {
+    calculadora.somar(1, 1);
+    expect(calculadora.somar).toHaveBeenCalled();
+  });
+
+  it("deve chamar o método somar três vezes (agrega a chamada do teste anterior)", () => {
+    calculadora.somar(1, 1);
+    calculadora.somar(1, 2);
+    expect(calculadora.somar).toHaveBeenCalledTimes(3);
   });
 });
