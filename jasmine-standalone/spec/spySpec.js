@@ -30,4 +30,11 @@ describe("Testes do objeto Spy", () => {
     calculadora.somar(1, 2);
     expect(calculadora.somar).toHaveBeenCalledTimes(3);
   });
+
+  it("deve chamar com os parâmetros validados", () => {
+    calculadora.somar(1, 1);
+    calculadora.somar(1, 2);
+    expect(calculadora.somar).toHaveBeenCalledWith(1, 1);
+    expect(calculadora.somar).toHaveBeenCalledWith(1, 2);
+  });
 });
