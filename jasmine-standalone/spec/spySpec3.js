@@ -47,6 +47,7 @@ describe("Testes do objeto Spy", () => {
   });
 
   it("deve demonstrar o uso do calls.all", () => {
+    pending("desabilitado para testar outros métodos nesta suite");
     calculadora.somar(1, 2);
     calculadora.somar(3, 1);
 
@@ -55,5 +56,16 @@ describe("Testes do objeto Spy", () => {
     expect(retorno[1].object).toEqual(calculadora);
     expect(retorno[1].args).toEqual([3, 1]);
     expect(retorno[1].returnValue).toEqual(10);
+  });
+
+  it("deve demonstrar o uso do calls.mostRecent", () => {
+    calculadora.somar(0, 2);
+    calculadora.somar(4, 1);
+
+    let retorno = calculadora.somar.calls.mostRecent();
+
+    expect(retorno.object).toEqual(calculadora);
+    expect(retorno.args).toEqual([4, 1]);
+    expect(retorno.returnValue).toEqual(10);
   });
 });
