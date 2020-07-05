@@ -17,31 +17,41 @@ describe("Testes do objeto Spy", () => {
 
   /* caso o objeto spy não seja instanciado, o expect testaria
   a instância do objeto definido no início da suite */
-  //   xit("deve possuir o método somar como não definido", () => {
-  //     expect(calculadora.somar(1, 1)).toBeUndefined();
-  //   });
+  it("deve possuir o método somar como não definido", () => {
+    pending("desabilitado para testar outros métodos nesta suite");
 
-  //   it("método somar não foi chamado", () => {
-  //     expect(calculadora.somar).not.toHaveBeenCalled();
-  //   });
+    expect(calculadora.somar(1, 1)).toBeUndefined();
+  });
 
-  //   it("deve chamar o método somar ao menos uma vez", () => {
-  //     calculadora.somar(1, 1);
-  //     expect(calculadora.somar).toHaveBeenCalled();
-  //   });
+  it("método somar não foi chamado", () => {
+    pending("desabilitado para testar outros métodos nesta suite");
 
-  //   it("deve chamar o método somar três vezes (agrega a chamada do teste anterior)", () => {
-  //     calculadora.somar(1, 1);
-  //     calculadora.somar(1, 2);
-  //     expect(calculadora.somar).toHaveBeenCalledTimes(3);
-  //   });
+    expect(calculadora.somar).not.toHaveBeenCalled();
+  });
 
-  //   it("deve chamar com os parâmetros validados", () => {
-  //     calculadora.somar(1, 1);
-  //     calculadora.somar(1, 2);
-  //     expect(calculadora.somar).toHaveBeenCalledWith(1, 1);
-  //     expect(calculadora.somar).toHaveBeenCalledWith(1, 2);
-  //   });
+  it("deve chamar o método somar ao menos uma vez", () => {
+    pending("desabilitado para testar outros métodos nesta suite");
+
+    calculadora.somar(1, 1);
+    expect(calculadora.somar).toHaveBeenCalled();
+  });
+
+  it("deve chamar o método somar três vezes (agrega a chamada do teste anterior)", () => {
+    pending("desabilitado para testar outros métodos nesta suite");
+
+    calculadora.somar(1, 1);
+    calculadora.somar(1, 2);
+    expect(calculadora.somar).toHaveBeenCalledTimes(3);
+  });
+
+  it("deve chamar com os parâmetros validados", () => {
+    pending("desabilitado para testar outros métodos nesta suite");
+
+    calculadora.somar(1, 1);
+    calculadora.somar(1, 2);
+    expect(calculadora.somar).toHaveBeenCalledWith(1, 1);
+    expect(calculadora.somar).toHaveBeenCalledWith(1, 2);
+  });
 
   it("deve executar o método somar original e executar o método subtrair do spy", () => {
     expect(calculadora.somar(1, 1)).toEqual(2);

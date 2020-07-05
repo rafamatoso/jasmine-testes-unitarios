@@ -23,11 +23,13 @@ describe("Testes do objeto Spy", () => {
 
   it("deve retornar 10 para o método somar", () => {
     pending("desabilitado para testar outros métodos nesta suite");
+
     expect(calculadora.somar(1, 2)).toEqual(1);
   });
 
   it("deve retornar valores distintos para cada chamada do método somar", () => {
     pending("desabilitado para testar outros métodos nesta suite");
+
     expect(calculadora.somar(3, 4)).toEqual(1);
     expect(calculadora.somar(1, 2)).toEqual(5);
     expect(calculadora.somar(4, 4)).toBeUndefined();
