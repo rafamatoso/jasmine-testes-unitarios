@@ -1,7 +1,7 @@
 {
   "name": "jasmine-node",
   "version": "1.0.0",
-  "description": "",
+  "description": "Node application with Jasmine and Karma",
   "main": "index.js",
   "scripts": {
     "test": "jasmine"
@@ -10,6 +10,9 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "jasmine": "^3.5.0"
+    "jasmine": "^3.5.0",
+    "karma": "^5.1.0",
+    "karma-chrome-launcher": "^3.1.0",
+    "karma-jasmine": "^3.3.1"
   }
 }
