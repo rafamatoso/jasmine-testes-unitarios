@@ -37,11 +37,23 @@ describe("Testes do objeto Spy", () => {
   });
 
   it("deve demonstrar o uso do calls.allArgs", () => {
+    pending("desabilitado para testar outros métodos nesta suite");
     calculadora.somar(0, 1);
     calculadora.somar(5, 2);
     expect(calculadora.somar.calls.allArgs()).toEqual([
       [0, 1],
       [5, 2],
     ]);
+  });
+
+  it("deve demonstrar o uso do calls.all", () => {
+    calculadora.somar(1, 2);
+    calculadora.somar(3, 1);
+
+    let retorno = calculadora.somar.calls.all();
+
+    expect(retorno[1].object).toEqual(calculadora);
+    expect(retorno[1].args).toEqual([3, 1]);
+    expect(retorno[1].returnValue).toEqual(10);
   });
 });
