@@ -15,7 +15,15 @@ describe("Testes do objeto Spy", () => {
   });
 
   it("deve demonstrar o uso do calls.any", () => {
+    pending("desabilitado para testar outros métodos nesta suite");
     calculadora.somar(1, 1);
     expect(calculadora.somar.calls.any()).toBeTruthy();
+  });
+
+  it("deve demonstrar o uso do calls.count", () => {
+    calculadora.somar(1, 2);
+    calculadora.somar(1, 2);
+    // calls.count se assemelha ao toHaveBeenCalled
+    expect(calculadora.somar.calls.count()).toEqual(2);
   });
 });
