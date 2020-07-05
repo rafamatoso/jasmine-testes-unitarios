@@ -18,7 +18,7 @@ describe("Testes do objeto Spy", () => {
       return n1 - n2;
     });
 
-    spyOn(calculadora, "subtrair");
+    spyOn(calculadora, "subtrair").and.throwError("erro");
   });
 
   it("deve retornar 10 para o método somar", () => {
@@ -35,5 +35,9 @@ describe("Testes do objeto Spy", () => {
 
   it("deve transformar o método somar numa subtração do callFake", () => {
     expect(calculadora.somar(5, 2)).toEqual(3);
+  });
+
+  it("deve lançar um erro ao chamar o método subtrair", () => {
+    expect(() => calculadora.subtrair(1, 1)).toThrowError("erro");
   });
 });
